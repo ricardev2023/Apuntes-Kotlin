@@ -4,6 +4,10 @@ description: Explicación de operaciones con datos numéricos.
 
 # Tema 3. Números en Kotlin
 
+{% content-ref url="variables-y-tipos-de-datos.md" %}
+[variables-y-tipos-de-datos.md](variables-y-tipos-de-datos.md)
+{% endcontent-ref %}
+
 ## OPERACIONES ARITMÉTICAS
 
 ### Suma
