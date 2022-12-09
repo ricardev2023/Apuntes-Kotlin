@@ -22,3 +22,29 @@ fun main(args: Array<String>) {
     println(divisa)
 }
 ```
+
+## COMENTARIOS
+
+Dado un bloque de código, a veces puede ser útil explicar qué hace o en qué consiste, o bien hacer que una línea no se ejecute por algún motivo, pero que siga presente en dicho código. Aquí entran en juego los comentarios, que son parte del código, pero no se ejecutan.
+
+En Kotlin, se pueden diferenciar dos tipos de comentarios:
+
+### Linea de comentarios
+
+En este caso, el comentario solo ocupa desde su inicio hasta el salto de linea. Se representa con "`//`"
+
+```kotlin
+// Esto es un comentario.
+val variable = 1 // Esto tambien es un comentario válido
+```
+
+### Comentario multilínea
+
+Existe la opción de que el comentario ocupe varias líneas. En este caso utilizamos "`/*`" para abrir el comentario y "`*/`" para cerrarlo.
+
+```kotlin
+/* Esto es un comentario multilínea
+que ocupa varias líneas
+hasta que decidamos cerrarlo */
+var variable = 1
+```
