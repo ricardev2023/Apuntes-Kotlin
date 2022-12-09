@@ -9,5 +9,6 @@
 
 ## CURSO BÁSICO
 
-* [KOTLIN BÁSICO](curso-basico/kotlin-basico.md)
-* [VARIABLES Y TIPOS DE DATOS](curso-basico/variables-y-tipos-de-datos.md)
+* [Tema 1. Kotlin Básico](curso-basico/tema-1.-kotlin-basico.md)
+* [Tema 2. Variables y Tipos de Datos](curso-basico/tema-2.-variables-y-tipos-de-datos.md)
+* [Tema 3. Números en Kotlin](curso-basico/tema-3.-numeros-en-kotlin.md)
