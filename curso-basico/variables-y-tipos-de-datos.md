@@ -2,7 +2,7 @@
 description: Explicación de los tipos de variables y los tipos de datos en Kotlin.
 ---
 
-# VARIABLES Y TIPOS DE DATOS
+# Tema 2. Variables y Tipos de Datos
 
 ## VARIABLES,  VALORES Y CONSTANTES
 
