@@ -4,7 +4,7 @@ description: Explicación de bucles for, while y do...while.
 
 # Tema 6. Bucles
 
-Existen situaciones en las que necesitamos que una acción se repita un número determinado de veces. Para ello se utilizan las estructuras de iteración o bucles. En Kotlin podemos encontrar tres tipos de bucles:
+Existen situaciones en las que necesitamos que una acción se repita un número determinado de veces. Para ello se utilizan las estructuras de iteración o bucles. En Kotlin podemos encontrar cuatro tipos de bucles:
 
 ## BUCLE FOR
 
@@ -90,3 +90,20 @@ if (clave == 1234) println("bienvenido")
     else println("Cuenta bloqueada.")
 ```
 
+## REPEAT
+
+`repeat()` técnicamente es una función y no una estructura iterativa, sin embargo, permite implementar iteraciones de otra manera que puede ser interesante para determinados usos.
+
+{% embed url="https://www.develou.com/funcion-repeat-en-kotlin/" %}
+Fuente: develou
+{% endembed %}
+
+repeat() nos permite iterar un bloque de código un número concreto de veces. Su sintaxis es la siguiente:
+
+```kotlin
+repeat(5) {
+    println("prueba")
+}
+```
+
+En este caso, se representará por consola el String "prueba" 5 veces.
