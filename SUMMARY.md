@@ -15,3 +15,4 @@
 * [Tema 4. Strings en Kotlin](curso-basico/tema-4.-strings-en-kotlin.md)
 * [Tema 5. Condicionales](curso-basico/tema-5.-condicionales.md)
 * [Tema 6. Bucles](curso-basico/tema-6.-bucles.md)
+* [Tema 7. Saltos y Returns](curso-basico/tema-7.-saltos-y-returns.md)
