@@ -113,6 +113,73 @@ import prueba.test.*
 Si las declaraciones de alto nivel están marcadas como `private`, en ese caso, solo pueden utilizarse en el archivo en el que se han declarado.
 {% endhint %}
 
+## NULL SAFETY
+
+{% embed url="https://kotlinlang.org/docs/null-safety.html" %}
+Fuente: kotlinlang.org
+{% endembed %}
+
+Kotlin se desarrolló en parte para evitar que pudieran existir las (odiadas) excepciones de "Null Pointer Exception".&#x20;
+
+Sin embargo, existe la posibilidad de que un puntero nulo suponga un fallo de seguridad en la arquitectura del programa. Es por eso que se desarrollaron los operadores `?` y `!!`.
+
+Las únicas maneras de que en Kotlin nos encontremos con una NPE son:
+
+* Llamada explicita a `throw NullPointerException()`.
+* Utilización del operador `!!`.
+* Inconsistencias en inicializaciones (avanzado):
+  * Un `this` sin inicializar disponible en un constructor utilizado en el código ([leaking this](https://stackoverflow.com/questions/53866865/leaking-this-in-constructor-warning-should-apply-to-final-classes-as-well-as)).
+  * El constructor de una superclase llama a un miembro cuya implementación en la clase derivada utiliza un estado no inicializado.
+* Interoperabilidad con Java.
+
+### Operador ?
+
+Este operador se utiliza a la hora de Castear (dar un tipo) una variable y nos permite que el tipo pueda ser también nulo.
+
+```kotlin
+val stringONulo: String?
+val intONulo: Int?
+```
+
+### Operador !!
+
+Con este operador, nosotros le estamos asegurando al compilador que una variable no va a ser nula.
+
+Cuando se utiliza dicho operador y la variable es nula, salta la excepción NPE permitiéndonos tratarla y evitando un problema de seguridad peor.
+
+```kotlin
+var string: String
+val lista = listOf("hola", "adios", "que", "tal")
+
+for (i in 0.. lista.size) {
+    string = lista.elementAtOrNull(i)!! // Esto devolverá NPE en la última iteración
+    println(string)
+}
+/*
+hola
+adios
+que
+tal
+Exception in thread "main" java.lang.NullPointerException
+*/
+
+// Para evitarlo se puede utilizar el operador ?:
+var string: String?
+val lista = listOf("hola", "adios", "que", "tal")
+
+for (i in 0.. lista.size) {
+    string = lista.elementAtOrNull(i) 
+    println(string)
+}
+/*
+hola
+adios
+que
+tal
+null
+*/
+```
+
 ## STANDARD INPUT / OUTPUT
 
 Standard I/O es la forma en la que nos referimos a mostrar información por consola (standard Output) y a recibir datos desde la consola (standard input).
@@ -135,16 +202,6 @@ Hay tres opciones para recibir input en Kotlin:
 #### readline()!!
 
 Es la primera función para Standard Input que se implementó en Kotlin y tiene problemas con los valores nulos. Es por eso que se acompaña siempre del operador `!!`
-
-{% hint style="info" %}
-**El operador !!**
-
-Kotlin se desarrolló en parte para evitar que pudieran existir las (odiadas) excepciones de "Null Pointer Exception".&#x20;
-
-Sin embargo, existe la posibilidad de que un puntero nulo suponga un fallo de seguridad en la arquitectura del programa. Es por eso que se desarrolló el operador `!!`.
-
-Cuando se utiliza dicho operador y la variable es nula, salta la excepción NPE permitiéndonos tratarla y evitando un problema de seguridad peor.
-{% endhint %}
 
 ```kotlin
 val x = readLine()!!
