@@ -27,7 +27,7 @@ Los bucles `for` son especialmente útiles para recorrer los elementos de una co
 Fuente: kotlinlang.org
 {% endembed %}
 
-Como hemos visto en el ejemplo del bucle `for`,  existen diferentes formas de iterar sobre un intervalo en Kotlin, una de ellas es `1..5` aunque existen varias que se deben utilizar de forma idiomática (por convenio) en función de nuestras necesidades:
+Como hemos visto en el ejemplo del bucle `for`,  existen diferentes formas de iterar sobre un intervalo en Kotlin, una de ellas es `1..5` aunque existen varias que se deben utilizar de [**forma idiomática**](https://kotlinlang.org/docs/idioms.html#iterate-over-a-range) (por convenio) en función de nuestras necesidades:
 
 ```kotlin
 for (i in 1..100) { ... }  // intervalo cerrado, incluye 1 y 100.

@@ -96,3 +96,7 @@ val texto = "tengo $x años"
 val x = 56    // Int
 val texto = "tengo ${x.toString()} años"
 ```
+
+{% hint style="info" %}
+Ésta es la [**forma idiomática**](https://kotlinlang.org/docs/idioms.html#string-interpolation) (por convenio) de incluir el valor de una variable o sentencia en nuestras cadenas de texto.
+{% endhint %}

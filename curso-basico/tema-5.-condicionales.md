@@ -178,7 +178,7 @@ if (condicion1) {
 ```
 
 {% hint style="success" %}
-La forma en que están escritos los ejemplos superiores es la forma idiomática (por convenio) de escribir éste tipo de bloques:
+La forma en que están escritos los ejemplos superiores es la **** [**forma idiomática**](https://kotlinlang.org/docs/idioms.html#if-expression) (por convenio) de escribir éste tipo de bloques:
 
 * Espacio entre el if/else if/else y los paréntesis.
 * Espacio entre los paréntesis y la llave.
