@@ -11,8 +11,8 @@ Las listas nos permiten:
 * Generar una secuencia de valores de longitud variable.
 * Del mismo tipo
 * Con duplicados e incluso valores Null.
-* Identificados con el mismo nombre.
 * Los elementos son indexados igual que en los Arrays, desde 0.
+* Identificados con el mismo nombre.
 
 ## TIPOS DE LISTAS
 
@@ -25,7 +25,7 @@ Al igual que las variables val, las listas de solo lectura pueden ser consultada
 Para crear una lista de solo lectura se utiliza la función `listOf(elementos)`.
 
 ```kotlin
-var diasDeSemana: List<String> = listOf(
+val diasDeSemana: List<String> = listOf(
     "lunes", "martes", "miercoles", "jueves", "viernes"
 )
 ```
@@ -37,7 +37,7 @@ Las listas mutables permiten, además de ser consultadas, añadir, eliminar y ca
 Para crear una lista mutable utilizamos la función `mutableListOf(elementos)`.
 
 ```kotlin
-var numeros: MutableList<Int> = mutableListOf(1, 3, 5, 7, 9, 11)
+val numeros: MutableList<Int> = mutableListOf(1, 3, 5, 7, 9, 11)
 ```
 
 ## FUNCIONES Y MÉTODOS
@@ -53,7 +53,7 @@ Para acceder al estado de una lista no mutable existen una serie de funciones y 
 * `subList(fromIndex, toIndex)` para obtener una porción de la lista en el rango (_fromIndex, toIndex)_
 
 ```kotlin
-var diasDeSemana: List<String> = listOf(
+val diasDeSemana: List<String> = listOf(
     "lunes", "martes", "miercoles", "jueves", "viernes", "jueves"
 )
 println(diasdeSemana.size)   // 6
@@ -74,7 +74,7 @@ Para modificar el contenido de una lista mutable podemos utilizar:
 * `[index]=element`, para reemplazar un ítem en el índice. Esta construcción es equivalente al operador `set(index, element)`
 
 ```kotlin
-var numeros: MutableList<Int> = mutableListOf(1, 3, 5, 7, 9, 11)
+val numeros: MutableList<Int> = mutableListOf(1, 3, 5, 7, 9, 11)
 println(numeros) // [1, 3, 5, 7, 9, 11]
 numeros.add(13)
 println(numeros) // [1, 3, 5, 7, 9, 11, 13]
