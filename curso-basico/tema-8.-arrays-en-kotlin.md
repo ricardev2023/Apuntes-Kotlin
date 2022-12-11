@@ -55,6 +55,10 @@ Hay situaciones en las que queremos que los datos contenidos en un Array surjan 
 val negativeNumbers = Array(10) { -(it + 1) }
 ```
 
+{% hint style="info" %}
+Esto puede ser útil también en las colecciones que se ven a continuación. Cada una de ellas tiene un método constructor de la misma manera que tienen los Arrays que se puede utilizar para lo mismo.
+{% endhint %}
+
 ## ARRAYS MULTIDIMENSIONALES
 
 Los arrays son equivalentes a vectores en matemáticas. Sin embargo, en Matemáticas se pueden crear vectores de vectores, lo que nos da una **Matriz**.&#x20;
@@ -68,6 +72,10 @@ val matriz: Array<Array<Int>> = arrayOf(
     arrayOf(7, 8, 9)
 )
 ```
+
+{% hint style="info" %}
+De la misma manera que se crean Arrays multidimensionales podemos crear Listas Multidimensionales con la característica de que se puede modificar la cantidad de elementos.
+{% endhint %}
 
 ## FUNCIONES Y MÉTODOS
 
