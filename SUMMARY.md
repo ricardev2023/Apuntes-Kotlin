@@ -19,3 +19,4 @@
 * [Tema 8. Arrays en Kotlin](curso-basico/tema-8.-arrays-en-kotlin.md)
 * [Tema 9. Colecciones. Listas](curso-basico/tema-9.-colecciones.-listas.md)
 * [Tema 10. Colecciones. Set](curso-basico/tema-10.-colecciones.-set.md)
+* [Tema 11. Colecciones. Mapas](curso-basico/tema-11.-colecciones.-mapas.md)
