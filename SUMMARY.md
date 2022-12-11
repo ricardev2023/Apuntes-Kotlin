@@ -17,3 +17,4 @@
 * [Tema 6. Bucles](curso-basico/tema-6.-bucles.md)
 * [Tema 7. Saltos y Returns](curso-basico/tema-7.-saltos-y-returns.md)
 * [Tema 8. Arrays en Kotlin](curso-basico/tema-8.-arrays-en-kotlin.md)
+* [Tema 9. Colecciones. Listas](curso-basico/tema-9.-colecciones.-listas.md)
