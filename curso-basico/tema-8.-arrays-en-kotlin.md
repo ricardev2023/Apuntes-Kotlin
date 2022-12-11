@@ -125,6 +125,7 @@ Uno de los usos típicos de los Arrays es recorrer sus elementos. Para ello util
 
 ```kotlin
 val vector = arrayOf(1, 2, 3, 4)
+for (i in vector) println(i)
 for (i in 0..vector.size - 1) println(vector[i])
 for (i in 0..vector.lastIndex) println(vector[i])
 for (i in vector.indices) println(vector[i])
