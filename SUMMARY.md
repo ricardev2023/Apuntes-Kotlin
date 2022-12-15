@@ -24,3 +24,7 @@
 ## Programación Funcional
 
 * [Tema 12. Funciones](programacion-funcional/tema-12.-funciones.md)
+
+## PROGRAMACIÓN ORIENTADA A OBJETOS
+
+* [TEORÍA POO](programacion-orientada-a-objetos/teoria-poo.md)

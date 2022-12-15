@@ -1,3 +1,7 @@
+---
+description: Explicación de las funciones y su uso en Kotlin
+---
+
 # Tema 12. Funciones
 
 ## FUNCIÓN
