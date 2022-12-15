@@ -1,7 +1,5 @@
 ---
-description: >-
-  Explicación de la declaración de variables y conceptos como constructor,
-  método set y método get.
+description: Explicación de la declaración de clases y de instancias.
 ---
 
 # CLASES Y OBJETOS
