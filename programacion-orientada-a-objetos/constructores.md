@@ -148,6 +148,7 @@ class Slime (name: String = "slimePorDefecto", hp: Int = 100, ap: Int = 5){
         if (name in BAD_WORDS) this.name = "BuenIntento" else this.name = name
         if (hp <= 100) this.hp = hp else this.hp = Random.nextInt(0, 100)
         if (ap <= 5) this.ap = ap else this.ap = Random.nextInt(0, 5)
+    /*...*/
     }
 ```
 

@@ -30,3 +30,4 @@
 * [Teoría POO](programacion-orientada-a-objetos/teoria-poo.md)
 * [Clases y Objetos](programacion-orientada-a-objetos/clases-y-objetos.md)
 * [Constructores](programacion-orientada-a-objetos/constructores.md)
+* [Getters y Setters](programacion-orientada-a-objetos/getters-y-setters.md)
