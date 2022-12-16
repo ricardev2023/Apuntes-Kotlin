@@ -2,7 +2,7 @@
 description: Explicación de los tipos de constructores.
 ---
 
-# CONSTRUCTORES
+# Constructores
 
 ## DEFINICIÓN
 
@@ -81,7 +81,7 @@ El constructor, igual que la clase en sí se puede modificar con los **modificad
 * `internal`: Marca una declaración como visible en el módulo actual.
 * `public`: Marca una declaración como visible en todas partes.
 
-Esto lo utilizaremos mucho más para aplicar la Herencia más adelante.
+Esto lo utilizaremos mucho más para aplicar la [Herencia](teoria-poo.md#herencia) y el [principio de Ocultación](teoria-poo.md#principio-de-ocultacion) más adelante.
 
 ## CONSTRUCTOR SECUNDARIO
 
