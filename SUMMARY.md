@@ -34,3 +34,4 @@
 * [Herencia](programacion-orientada-a-objetos/herencia.md)
 * [Polimorfismo](programacion-orientada-a-objetos/polimorfismo.md)
 * [Herencia múltiple](programacion-orientada-a-objetos/herencia-multiple.md)
+* [Otros Conceptos](programacion-orientada-a-objetos/otros-conceptos.md)
