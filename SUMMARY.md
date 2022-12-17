@@ -32,3 +32,4 @@
 * [Constructores](programacion-orientada-a-objetos/constructores.md)
 * [Getters y Setters](programacion-orientada-a-objetos/getters-y-setters.md)
 * [Herencia](programacion-orientada-a-objetos/herencia.md)
+* [Polimorfismo](programacion-orientada-a-objetos/polimorfismo.md)
