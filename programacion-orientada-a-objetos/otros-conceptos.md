@@ -66,43 +66,6 @@ println(interna.presentar()) // hola, soy Interna, hija de Padre
 Es muy importante ver que, como la clase interna tiene acceso a los miembros de la clase externa, para inicializar la clase interna hay que llamar al constructor de la clase externa también `Subclasses().Interna()`.
 {% endhint %}
 
-## OBJETOS COMPAÑEROS
-
-Un **companion object** es un objeto que se declara dentro de una clase pero que puede ser llamado sin necesidad de crear una instancia de dicha clase.
-
-{% hint style="info" %}
-En cierto modo son el equivalente a los objetos estáticos de lenguajes como Java.
-{% endhint %}
-
-### Declaración
-
-```kotlin
-class ClaseEjemplo {
-    companion object {
-        val propiedad: Int = 10
-
-        fun metodo() = println("Método de ejemplo.")
-    }
-}
-```
-
-### Acceso
-
-Tal y como se ha creado la clase `ClaseEjemplo`, podemos acceder al atributo `propiedad` y al método `metodo()` sin necesidad de crear un objeto del tipo `ClaseEjemplo`.
-
-<pre class="language-kotlin"><code class="lang-kotlin"><strong>println(ClaseEjemplo.propiedad) // 10
-</strong>ClaseEjemplo.metodo() // Método de ejemplo.
-</code></pre>
-
-{% hint style="info" %}
-El hecho de que un objeto compañero sea un objeto, hace que tenga las mismas características que los objetos:
-
-* Puedo especificarle un nombre.
-* Puedo aplicarle herencia.
-* Puedo implementarle interfaces.
-* Puedo declararle funciones y propiedades de extensión.
-{% endhint %}
-
 ## OBJETOS ANÓNIMOS
 
 {% embed url="https://www.develou.com/expresiones-de-objetos-en-kotlin/" %}
@@ -272,48 +235,3 @@ enum class Day {
     
 }
 ```
-
-## CLASES SELLADAS
-
-{% embed url="https://www.adictosaltrabajo.com/2019/06/27/clases-selladas-y-enumerados-en-kotlin/" %}
-Fuente: adictosaltrabajo.com
-{% endembed %}
-
-### Concepto
-
-La principal limitación de las `enum class` es que todos los elementos de la enumeración son objetos de la clase enum class y por lo tanto tienen los mismo atributos y métodos.
-
-Para solucionar ese problema se desarrollaron las clases selladas que se utilizan como enumeraciones pero en las que cada elemento es una subclase con sus atributos y métodos propios.
-
-### Ventajas
-
-* La más importante es que **cada subclase puede tener sus propios atributos y sus propios métodos**, a diferencia de las `enum class`, cuyos elementos siguen todos la misma estructura.
-* Además, las `enum class` solamente pueden tener una instancia, mientras que las subclases de clases selladas **pueden tener varias instancias**, cada una con su estado, **o una** si la definimos como _object_.
-
-### Declaración de sealed class
-
-```kotlin
-sealed class Operation {
-    class Add(val value: Int) : Operation()
-    class Substract(val value: Int) : Operation()
-    class Multiply(val value: Int) : Operation()
-    class Divide(val value: Int) : Operation()
-}
-```
-
-Si ahora tratamos de realizar una operación when, nos exigirá dar un comportamiento a cada subclase de la clase sellada, sino, no compilará:
-
-```kotlin
-fun execute(x: Int, op: Operation) = when (op) {
-    is Operation.Add -> x + op.value
-    is Operation.Substract -> x - op.value
-    is Operation.Multiply -> x * op.value
-    is Operation.Divide -> x / op.value
-}
-```
-
-{% hint style="info" %}
-Además, como se ve arriba, no es necesaria sentencia else debido a que ya están todas las subclases cubiertas.
-{% endhint %}
-
-Las `sealed class` tienen un potencial muy grande y permiten implementar de manera sencilla ideas muy complejas.&#x20;

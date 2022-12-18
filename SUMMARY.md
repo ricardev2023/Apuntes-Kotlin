@@ -24,6 +24,7 @@
 ## Programación Funcional
 
 * [Tema 12. Funciones](programacion-funcional/tema-12.-funciones.md)
+* [Funciones de Extensión](programacion-funcional/funciones-de-extension.md)
 
 ## PROGRAMACIÓN ORIENTADA A OBJETOS
 
