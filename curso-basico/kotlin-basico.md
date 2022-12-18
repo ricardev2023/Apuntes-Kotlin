@@ -236,3 +236,28 @@ var enteredBoolean:Boolean = numero.nextBoolean()    // recibimos un Booleano
 Scanner es una forma más potente de recibir Input pero también es más costosa a nivel de recursos.
 
 Por otro lado, aunque uno reciba los datos del tipo String con readln(), siempre puede transformarlos en el tipo que quiera como se ve en el [**Tema 3**](tema-3.-numeros-en-kotlin.md#funciones-para-convertir-tipos).
+
+## TYPEALIAS
+
+{% embed url="https://kotlinlang.org/docs/type-aliases.html" %}
+Fuente: kotlinlang.org
+{% endembed %}
+
+Los alias nos permiten referirnos a partes de nuestro código con nombres más expresivos y sencillos para facilitar la lectura del código. Su sintaxis es la siguiente:
+
+```kotlin
+typealias alias = codigoAlQueSeRefiere
+```
+
+#### Ejemplos de Typealias
+
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>// Alias para tipos
+</strong><strong>typealias NodeSet = Set&#x3C;Network.Node>
+</strong>typealias FileTable&#x3C;K> = MutableMap&#x3C;K, MutableList&#x3C;File>>
+// Alias para funciones
+typealias MyHandler = (Int, String, Any) -> Unit
+typealias Predicate&#x3C;T> = (T) -> Boolean
+// Alias para clases internas
+typealias AInner = A.Inner
+typealias BInner = B.Inner
+</code></pre>
