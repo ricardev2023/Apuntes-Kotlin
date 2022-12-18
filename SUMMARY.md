@@ -25,6 +25,7 @@
 
 * [Tema 12. Funciones](programacion-funcional/tema-12.-funciones.md)
 * [Funciones de Extensión](programacion-funcional/funciones-de-extension.md)
+* [Funciones de Orden Superior](programacion-funcional/funciones-de-orden-superior.md)
 
 ## PROGRAMACIÓN ORIENTADA A OBJETOS
 
