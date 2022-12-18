@@ -261,3 +261,51 @@ typealias Predicate&#x3C;T> = (T) -> Boolean
 typealias AInner = A.Inner
 typealias BInner = B.Inner
 </code></pre>
+
+## DESESTRUCTURACIÓN
+
+Existen tipos de datos que almacenan en un mismo valor varios datos e incluso estos datos pueden ser de diferentes tipos. Por ejemplo, un Array de Arrays almacena en cada uno de sus elementos un Array con diferentes elementos a su vez. O un mapa que almacena una clave y un valor en cada uno de sus elementos.
+
+Para poder separar estos diferentes datos en variables diferentes se implementó la desestructuración.
+
+La desestructuración de un tipo permite desempacar un valor compuesto por varios datos en diferentes variables. La sintaxis es la siguiente:
+
+```kotlin
+val person = "Anonimo" to 54
+
+// Desestructuración del par
+val (name, age) = person
+```
+
+### Uso del guión bajo
+
+En el caso de que no queramos desestructurar todas las variables, podemos omitir algunas poniendo un guión bajo (\_) en el lugar en el que le asignaríamos un nombre:
+
+```kotlin
+val nums = Triple(1, 2, 3)
+
+val all = nums
+println(all)    // (1, 2, 3)
+val (first) = nums
+println(first)    // 1
+val (first1, second1) = nums
+println("$first1  $second1")    // 1  2
+val (first2, second2, third2) = nums
+println("$first2  $second2  $third2")    // 1  2  3
+val (first3, _, third3) = nums
+println("$first3 $third3")    // 1 3
+val (_, _, third4) = nums
+println("$third4")    // 3
+```
+
+### Funciones de componente
+
+La desestructuración es posible gracias a la existencia de funciones de componentes o funciones `componentN()`. Internamente el compilador invoca a estas funciones desde el objeto a desestructurar, con el objetivo de declarar e inicializar múltiples variables.
+
+```kotlin
+val person = "Anonimo" to 54
+
+// Desestructuración del par
+val name = person.component1()
+val age = person.component2()
+```
