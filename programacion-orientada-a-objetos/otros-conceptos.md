@@ -66,6 +66,43 @@ println(interna.presentar()) // hola, soy Interna, hija de Padre
 Es muy importante ver que, como la clase interna tiene acceso a los miembros de la clase externa, para inicializar la clase interna hay que llamar al constructor de la clase externa también `Subclasses().Interna()`.
 {% endhint %}
 
+## OBJETOS COMPAÑEROS
+
+Un **companion object** es un objeto que se declara dentro de una clase pero que puede ser llamado sin necesidad de crear una instancia de dicha clase.
+
+{% hint style="info" %}
+En cierto modo son el equivalente a los objetos estáticos de lenguajes como Java.
+{% endhint %}
+
+### Declaración
+
+```kotlin
+class ClaseEjemplo {
+    companion object {
+        val propiedad: Int = 10
+
+        fun metodo() = println("Método de ejemplo.")
+    }
+}
+```
+
+### Acceso
+
+Tal y como se ha creado la clase `ClaseEjemplo`, podemos acceder al atributo `propiedad` y al método `metodo()` sin necesidad de crear un objeto del tipo `ClaseEjemplo`.
+
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>println(ClaseEjemplo.propiedad) // 10
+</strong>ClaseEjemplo.metodo() // Método de ejemplo.
+</code></pre>
+
+{% hint style="info" %}
+El hecho de que un objeto compañero sea un objeto, hace que tenga las mismas características que los objetos:
+
+* Puedo especificarle un nombre.
+* Puedo aplicarle herencia.
+* Puedo implementarle interfaces.
+* Puedo declararle funciones y propiedades de extensión.
+{% endhint %}
+
 ## OBJETOS ANÓNIMOS
 
 {% embed url="https://www.develou.com/expresiones-de-objetos-en-kotlin/" %}
