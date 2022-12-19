@@ -1,7 +1,5 @@
 ---
-description: >-
-  Explicación de la implementación de la herencia, el polimorfismo y las
-  interfaces.
+description: Explicación de la implementación de la herencia.
 ---
 
 # Herencia

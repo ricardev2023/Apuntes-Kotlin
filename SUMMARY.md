@@ -20,6 +20,7 @@
 * [Tema 9. Colecciones. Listas](curso-basico/tema-9.-colecciones.-listas.md)
 * [Tema 10. Colecciones. Set](curso-basico/tema-10.-colecciones.-set.md)
 * [Tema 11. Colecciones. Mapas](curso-basico/tema-11.-colecciones.-mapas.md)
+* [Tema 12.Manejo de Excepciones](curso-basico/tema-12.manejo-de-excepciones.md)
 
 ## Programación Funcional
 
