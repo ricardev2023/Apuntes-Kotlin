@@ -415,3 +415,50 @@ Sin embargo si intentas comentar la línea `game.init(800,600)` de la ejecución
 
 `UninitializedPropertyAccessException`
 {% endhint %}
+
+## PROPIEDADES LAZY
+
+{% embed url="https://www.develou.com/propiedades-lazy-en-kotlin/" %}
+Fuente: develou
+{% endembed %}
+
+Una [_propiedad lazy_](https://kotlinlang.org/docs/reference/delegated-properties.html#lazy) o _perezosa_, es aquella que su valor es computado por delegación, a través de la función `lazy`. Esto hará que su accesor `get()` otorgue el mismo valor luego de la primera ejecución.
+
+La función lambda que recibe `lazy` para la lógica de `get()`, será materializado solo cuando sea necesitado, posponiendo la lógica de inicialización al momento en que crees una instancia de su clase contenedora.
+
+Esto es muy útil si la inicialización de un objeto requiere de mucho poder de computación y pude retrasar la ejecución del resto de la aplicación.
+
+Declara una propiedad lazy añadiéndole `by lazy` al final de su tipo.
+
+```kotlin
+val propiedadLazy by lazy{
+    /* lógica de accesor */
+}
+```
+
+Por defecto, las propiedades lazy en Kotlin están seguras en un ambiente multihilo, ya que `lazy()` mostrará el mismo valor a los hilos que intenten accederlo.
+
+### Ejemplo
+
+```kotlin
+val currentTime: Long by lazy {
+    System.currentTimeMillis()
+}
+
+fun main() {
+    println("Valor en llamada 1: $currentTime")
+    println ("Valor en llamada 2: $currentTime")
+}
+
+/* Resultado
+Valor en llamada 1: 1611934597326
+Valor en llamada 2: 1611934597326 */
+```
+
+Al delegar el contenido de la propiedad con la función `lazy{}`, la primer llamada recordará el valor inicial, por lo que en la llamada 2 no habrá una segunda ejecución.
+
+Y ya que solo tomará un valor al ejecutarse la lambda, debes usar `val` para la declaración.
+
+{% hint style="success" %}
+Esto es muy útil para limitar el consumo de recursos en acciones que se repiten sin que se modifique el valor de retorno entre ejecuciones ya que sólo se ejecuta la primera vez.
+{% endhint %}
