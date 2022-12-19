@@ -317,3 +317,101 @@ Además, como se ve arriba, no es necesaria sentencia else debido a que ya está
 {% endhint %}
 
 Las `sealed class` tienen un potencial muy grande y permiten implementar de manera sencilla ideas muy complejas.&#x20;
+
+## PROPIEDADES LATEINIT
+
+{% embed url="https://www.develou.com/propiedades-lateinit-en-kotlin/" %}
+Fuente: devolou
+{% endembed %}
+
+El modificador [`lateinit`](https://kotlinlang.org/docs/reference/properties.html#late-initialized-properties-and-variables) te permite inicializar una propiedad no anulable dentro del cuerpo de la clase, en vez de hacerlo en el constructor.
+
+Este mecanismo te ayuda cuando deseas asignar el valor de una propiedad después y no deseas usar comprobaciones de nulos una vez inicializada.
+
+```kotlin
+lateinit var propiedad:String
+```
+
+{% hint style="info" %}
+Es muy importante que esto solo se utiliza para propiedades, no para variables en el cuerpo de una clase o una función.
+{% endhint %}
+
+### Restricciones
+
+Tenga en cuenta las siguientes restricciones a la hora de definir una propiedad `lateinit`:
+
+* Deben ser propiedades mutables `var` (es evidente, ya que necesitas cambiar el valor fuera del constructor).
+* Debe declararse en el cuerpo de la clase, no el constructor primario. Es decir, entre las llaves y no entre los paréntesis.
+* No deben tener getter o setter personalizados.
+* No pueden declararse con tipos primitivos.
+* No pueden ser anulables.
+
+### Ejemplo
+
+#### Solución sin lateinit
+
+Proveeremos a `Game` de dos métodos: `init()` para inicializar el componente de video y `createScene()` para generar la escena preliminar:
+
+```kotlin
+// Ejemplo de devolou
+class VideoController(var screenWitdh: Int, var screenHeight: Int)
+class Game {
+    private var videoController: VideoController? = null
+
+    fun init(witdh:Int, height:Int) {
+        videoController = VideoController(witdh, height)
+    }
+
+    fun createScene() {
+        print("Resolución de ${videoController?.screenWitdh}x" +
+                "${videoController?.screenHeight}")
+    }
+
+}
+```
+
+Como no podemos dejar a `videoController` sin valor hasta `init()`, entonces lo declaramos como anulable para asignarle `null`.
+
+En `createScene()` usaremos el operador de acceso seguro `?` para acceder a `screenWitdh` y `screenHeight`.
+
+Como puedes notar, si en el futuro tuviésemos más usos del controlador de video dentro de `Game`, tendríamos grandes cantidades de comprobaciones de nulos.
+
+#### Ejemplo con lateinit
+
+```kotlin
+// Ejemplo de devolou
+class VideoController(var screenWitdh: Int, var screenHeight: Int)
+class Game {
+    private lateinit var videoController: VideoController
+
+    fun init(witdh:Int, height:Int) {
+        videoController = VideoController(witdh, height)
+    }
+
+    fun createScene() {
+        print("Resolución de ${videoController.screenWitdh}x" +
+                "${videoController.screenHeight}")
+    }
+
+}
+```
+
+Ahora al crear la instancia de VideoController con lateinit nos ahorramos todas las comprobaciones de nulo pues le hemos asegurado al compilador que lo inicializaremos más adelante.
+
+Vamos a crear un objeto del tipo Game para ver si funciona:
+
+```kotlin
+fun main() {
+    val game = Game()
+    game.init(800,600)
+    game.createScene()
+}
+```
+
+{% hint style="warning" %}
+El ejemplo de arriba funciona pues al hacer game.init() inicializamos el objeto videocontroller.&#x20;
+
+Sin embargo si intentas comentar la línea `game.init(800,600)` de la ejecución anterior, obtendrás una excepción del tipo:
+
+`UninitializedPropertyAccessException`
+{% endhint %}
