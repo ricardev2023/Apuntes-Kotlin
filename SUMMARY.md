@@ -28,6 +28,7 @@
 * [Funciones de Extensión](programacion-funcional/funciones-de-extension.md)
 * [Funciones de Orden Superior](programacion-funcional/funciones-de-orden-superior.md)
 * [Funciones Lambda](programacion-funcional/funciones-lambda.md)
+* [Funciones de Alcance](programacion-funcional/funciones-de-alcance.md)
 
 ## PROGRAMACIÓN ORIENTADA A OBJETOS
 
