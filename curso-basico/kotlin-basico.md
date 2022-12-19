@@ -180,6 +180,52 @@ null
 */
 ```
 
+### Operador Elvis
+
+Por último tenemos el operador Elvis. Este operador nos permite ejecutar una expresión si la variable es nula, mientras que si es no nula, utilizará la referencia de dicha variable.&#x20;
+
+Se llama operador Elvis por que se parece al cantante de country Elvis Presley "`?:`"
+
+<figure><img src="../.gitbook/assets/elvis.png" alt=""><figcaption><p>Fuente: stackoverflow.com</p></figcaption></figure>
+
+El operador Elvis evaluará la expresión del lado derecho solo si la expresión de la izquierda es nula.
+
+Si tenemos el siguiente código:
+
+```kotlin
+fun main(args: Array<String>) {
+    var str: String? = null
+    var str1: String? = "Hi, Welcome!"
+    var l:  Int = if (str != null) str.length else -1
+    var l1:  Int = if (str1 != null) str1.length else -1
+    println("str's legth is ${l}")
+    println("str1's length is ${l1}")
+}
+/* Resultado
+str's legth is -1
+str1's legth is 12 */
+```
+
+Podemos simplificar los bloques `if, else` si utilizamos el `operador elvis`:
+
+```kotlin
+fun main(args: Array<String>) {
+    var str: String? = null
+    var str1: String? = "Hi, Welcome!"
+    var l:  Int = str ?.length ?: -1
+    var l1:  Int = str1 ?.length ?: -1
+    println("str's legth is ${l}")
+    println("str1's length is ${l1}")
+}
+/* Resultado
+str's legth is -1
+str1's legth is 12 */
+```
+
+{% hint style="success" %}
+El operador Elvis es la espina dorsal de la seguridad ante nulos ya que facilita la capacidad de realizar comprobaciones y ofrece código alternativo en el caso de que la variable tenga un valor nulo.
+{% endhint %}
+
 ## STANDARD INPUT / OUTPUT
 
 Standard I/O es la forma en la que nos referimos a mostrar información por consola (standard Output) y a recibir datos desde la consola (standard input).
